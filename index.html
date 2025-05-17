@@ -22,7 +22,7 @@
 
   <!-- Home Section -->
   <section id="home" class="section">
-    <div class="section__container">
+    <div class="section__container home__container">
       <div class="content">
         <p class="subtitle">HELLO</p>
         <h1 class="title">
@@ -36,32 +36,46 @@
           <button class="projects">Projects</button>
         </div>
       </div>
-    </div>
-    <div class="image">
-      <img src="me.png" alt="profile" />
+      <div class="image">
+        <img src="mee.png" alt="Gwyneth Aragon's profile photo" />
+      </div>
     </div>
   </section>
 
   <!-- About Section -->
   <section id="about" class="section">
-    <div class="section__container">
-      <h2>About Me</h2>
-      <p>
-        I’m a passionate Computer Science student who enjoys building websites and applications.
-        I’m always eager to learn new technologies and grow my development skills.
-      </p>
+    <div class="section__container about__container">
+      <div class="about__image">
+        <img src="me.png" alt="Gwyneth Aragon" />
+      </div>
+      <div class="about__content">
+        <h2>About Me</h2>
+        <p>
+          I’m a passionate Computer Science student who enjoys building websites and applications.
+          I’m always eager to learn new technologies and grow my development skills.
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="section">
-    <div class="section__container">
-      <h2>Contact Me</h2>
-      <p>Email: gwynetharagon1018@gmail.com.com</p>
-      <p>GitHub: github.com/gwyzcx</p>
-      <p>Instagram: gwenchana.a</p>
+<section id="contact" class="section contact__section">
+  <div class="section__container contact__container">
+    <div class="contact__form">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="E-mail" required />
+        <textarea name="message" placeholder="Message" rows="5" required></textarea>
+        <button type="submit" class="btn pink">Contact Us</button>
+      </form>
     </div>
-  </section>
+    <div class="contact__info">
+      <p><strong>Email</strong><br>gwynetharagon1018@gmail.com</p>
+      <p><strong>Based in</strong><br>Philippines,6100</p>
+    </div>
+  </div>
+</section>
 
 </body>
 </html>
