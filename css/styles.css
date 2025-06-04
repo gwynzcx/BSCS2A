@@ -308,6 +308,7 @@ button:hover,
   display: flex;
   gap: 2rem;
   margin-top: 1rem;
+  justify-content: center;
 }
 
 .social__icons a img {
