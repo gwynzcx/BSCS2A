@@ -1,4 +1,4 @@
-/* General Styles */
+/* Global Styles */
 html {
   scroll-behavior: smooth;
 }
@@ -7,9 +7,14 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff0f5; /* Light pink */
+  background-color: #fff0f5;
   color: #333;
-  
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Navigation */
@@ -20,40 +25,37 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-
 }
 
 .nav_content {
   display: flex;
   justify-content: flex-end;
-  
-  
 }
 
 .nav_content ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   gap: 3rem;
+  padding: 0;
+  margin: 0;
 }
 
 .nav_content ul li a {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .nav_content ul li a:hover {
   color: #ff69b4;
 }
 
-/* Sections */
+/* Section Styling */
 .section {
   display: flex;
   justify-content: center;
-  padding: 1rem 4rem;
+  padding: 2rem;
   background-color: #ffffff;
 }
 
@@ -65,8 +67,10 @@ nav {
   align-items: center;
   gap: 2rem;
   justify-content: center;
+  text-align: center;
 }
 
+/* Home & About Section */
 .home__container .content,
 .about__content {
   flex: 1 1 300px;
@@ -74,45 +78,30 @@ nav {
 
 .home__container .image,
 .about__image {
-    display: flex;
-  align-items: center; /* Aligns image and content vertically */
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap; /* Optional: wraps on small screens */
   flex: 1;
-
   display: flex;
   justify-content: center;
   align-items: center;
-   width: 80%;
-  max-width: 250px;
-  height: 100vh;
-  border-radius: 50%;
-  object-fit: cover;
-
 }
 
 .image img,
 .about__image img {
-  max-width: 100%;
-  border-radius: 400px;
-  width: 400px;
-  height: 400px;
-  object-fit: contain;
-  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 50%;
   border: 4px solid deeppink;
   background-color: white;
   padding: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.image img, 
+.image img:hover,
 .about__image img:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+  box-shadow: 0 0 15px rgba(255, 20, 147, 0.5);
 }
 
-/* Text Styles */
+/* Typography */
 .subtitle {
   color: #ff69b4;
   font-size: 1.2rem;
@@ -133,8 +122,8 @@ nav {
 .description {
   font-size: 1rem;
   color: #555;
-  margin: 1rem 0;
   line-height: 1.6;
+  margin: 1rem 0;
 }
 
 /* Buttons */
@@ -142,84 +131,46 @@ nav {
   margin-top: 1.5rem;
 }
 
-button {
+button,
+.btn.pink {
   background-color: #ff69b4;
   border: none;
   color: white;
   padding: 0.75rem 1.5rem;
-  margin-right: 1rem;
   border-radius: 5px;
   font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button:hover {
+button:hover,
+.btn.pink:hover {
   background-color: #ff1493;
   transform: scale(1.05);
 }
 
-/* Headings */
-.section h2 {
-  font-size: 2rem;
-  color: #ff1493;
-  margin-bottom: 1rem;
-}
-
-.section__container p {
-  font-size: 1rem;
-  color: #444;
-  line-height: 1.6;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .section__container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .nav_content {
-    justify-content: center;
-  }
-
-  .action__btns {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  button {
-    margin: 0.5rem 0;
-  }
-}
-
-/* Skills Section */
+/* Skills */
 .skills__container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Stack title and grid vertically */
+  flex-direction: column;
   justify-content: center;
-  align-items: center; /* Center horizontally */
-  text-align: center;
+  align-items: center;
   padding: 2rem;
-  box-sizing: border-box;
 }
 
 .skills__title {
-  color: deeppink;
   font-size: 2.5rem;
-  font-weight: bold;
+  color: deeppink;
   margin-bottom: 2rem;
-  text-align: center;
 }
 
 .skills__grid {
- display: flex;
+  display: flex;
   justify-content: center;
-  gap: 5rem;
+  gap: 3rem;
   flex-wrap: wrap;
-  margin-top: 2rem;
 }
 
 .skill {
@@ -231,12 +182,10 @@ button:hover {
 .skill img {
   width: 150px;
   height: 150px;
-  object-fit: contain;
-  margin-bottom: 1rem;
   border: 4px solid deeppink;
   background-color: white;
   padding: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill img:hover {
@@ -245,19 +194,19 @@ button:hover {
 }
 
 .skill p {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
   color: deeppink;
   font-weight: bold;
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
 }
 
-
-/* Projects Section */
+/* Projects */
 .projects__container {
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
   flex-direction: column;
-  text-align: center;
-  
+  align-items: center;
+  padding: 2rem;
 }
 
 .projects__grid {
@@ -273,9 +222,8 @@ button:hover {
   background-color: #fff0f5;
   border-radius: 12px;
   padding: 1rem;
-  text-align: left;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .project__card:hover {
@@ -296,21 +244,18 @@ button:hover {
 }
 
 .project__card p {
-  color: #555;
   font-size: 0.95rem;
+  color: #555;
   line-height: 1.4;
 }
 
-
-/* Contact Section Layout */
+/* Contact */
 .contact__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 2rem;
-  align-items: flex-start;
-  height: 100vh;
-  padding: 5rem;
+  padding: 5rem 2rem;
 }
 
 .contact__form,
@@ -335,9 +280,8 @@ button:hover {
   padding: 0.75rem;
   border: none;
   border-bottom: 2px solid #333;
-  font-size: 1rem;
   background: transparent;
-  resize: none;
+  font-size: 1rem;
   color: #333;
   outline: none;
 }
@@ -352,59 +296,26 @@ button:hover {
   border-bottom: 2px solid #ff69b4;
 }
 
-.btn.pink {
-  background-color: #ff69b4;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  width: fit-content;
-}
-
-.btn.pink:hover {
-  background-color: #ff1493;
-}
-
-.contact__info {
-  flex: 1 1 200px;
-  color: #333;
-  font-size: 1rem;
-}
-
 .contact__info p {
   margin-bottom: 1.5rem;
-}
-
-/* Responsive Layout */
-@media (max-width: 768px) {
-  .contact__container {
-    flex-direction: column;
-    text-align: left;
-  }
-
-  .contact__form,
-  .contact__info {
-    width: 100%;
-  }
-
+  font-size: 1rem;
+  color: #333;
 }
 
 /* Social Icons */
 .social__icons {
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   margin-top: 1rem;
 }
 
 .social__icons a img {
   width: 40px;
   height: 40px;
-  object-fit: contain;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
+  
+  
+
 }
 
 .social__icons a:hover img {
@@ -413,30 +324,25 @@ button:hover {
 
 /* Footer */
 .footer {
- background-color: #ffb6c1;
-  color: #2c2c2c;
+  background-color: #ffb6c1;
   text-align: center;
-  padding: 1rem 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
- 
+  padding: 1.5rem 2rem;
+  color: #2c2c2c;
 }
 
 .footer-brand h2 {
   font-size: 1rem;
-  font-weight: bold;
   margin: 0;
 }
 
 .footer-brand .tagline {
   font-size: 1rem;
   color: #5e5e5e;
-  margin: 0;
+  margin: 0.25rem 0;
 }
 
 .footer-bottom {
-  padding-top: 0;
   font-size: 1rem;
-  margin: 0;
 }
 
 .footer-bottom a {
@@ -447,4 +353,37 @@ button:hover {
 
 .footer-bottom a:hover {
   color: #d6336c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section__container,
+  .skills__grid,
+  .projects__grid,
+  .contact__container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav_content {
+    justify-content: center;
+  }
+
+  .action__btns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    margin: 0.5rem 0;
+  }
+
+  .contact__form,
+  .contact__info {
+    width: 100%;
+  }
+
+  .social__icons {
+    justify-content: center;
+  }
 }
